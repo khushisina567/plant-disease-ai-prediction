@@ -1,0 +1,6 @@
+<!doctype html>
+<html><head><title>Prediction History</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body><nav><b>🌿 PlantCare AI</b><a href="/">Home</a><a href="/history">History</a><a href="/about">About</a></nav>
+<main class="container"><h1>Prediction History</h1><div class="card"><table><tr><th>Image</th><th>Disease</th><th>Confidence</th><th>Date</th></tr>
+{% for r in rows %}<tr><td><img class="thumb" src="{{url_for('static', filename='uploads/'+r[0])}}"></td><td>{{r[1]}}</td><td>{{"%.2f"|format(r[2])}}%</td><td>{{r[3]}}</td></tr>{% else %}<tr><td colspan="4">No predictions yet.</td></tr>{% endfor %}</table></div></main>
+</body></html>

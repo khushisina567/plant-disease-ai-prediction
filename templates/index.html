@@ -1,0 +1,10 @@
+<!doctype html>
+<html><head><title>Plant Disease AI</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body><nav><b>🌿 PlantCare AI</b><a href="/">Home</a><a href="/history">History</a><a href="/about">About</a></nav>
+<main class="hero"><div><p class="tag">AI + MACHINE LEARNING</p><h1>Plant Disease Prediction & Care</h1><p>Upload a clear leaf image and let the model classify the plant condition.</p>
+<form action="/predict" method="post" enctype="multipart/form-data" class="card">
+<label>Select leaf image</label><input type="file" name="leaf_image" accept=".jpg,.jpeg,.png" required>
+<button>🔍 Predict Disease</button></form>
+{% with messages = get_flashed_messages() %}{% for m in messages %}<div class="alert">{{m}}</div>{% endfor %}{% endwith %}
+</div><div class="illustration">🌱<br><span>Healthy crops start with early detection.</span></div></main>
+</body></html>

@@ -1,0 +1,8 @@
+<!doctype html>
+<html><head><title>Prediction Result</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body><nav><b>🌿 PlantCare AI</b><a href="/">Home</a><a href="/history">History</a><a href="/about">About</a></nav>
+<main class="container"><h1>Prediction Result</h1><div class="result-grid">
+<div class="card"><img class="leaf" src="{{ image }}"><h2>{{ disease }}</h2><div class="confidence">Confidence: {{ "%.2f"|format(confidence) }}%</div></div>
+<div class="card"><h3>Symptoms</h3><p>{{info.symptoms}}</p><h3>Possible Cause</h3><p>{{info.cause}}</p><h3>Recommended Care / Treatment</h3><p>{{info.treatment}}</p><h3>Prevention</h3><p>{{info.prevention}}</p></div>
+</div><p class="note">Educational result only. Confirm important crop-health decisions with a qualified local agricultural professional.</p><a class="button" href="/">Analyze another leaf</a></main>
+</body></html>
